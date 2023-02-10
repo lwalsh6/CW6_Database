@@ -16,6 +16,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+//Logan Walsh
+//2-10-2023
+//This program allows the user to print out a list of employees
+
+
 namespace CW6_Database
 {
     /// <summary>
