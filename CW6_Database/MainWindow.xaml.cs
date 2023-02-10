@@ -27,7 +27,7 @@ namespace CW6_Database
         public MainWindow()
         {
             InitializeComponent();
-            cn = new OleDbConnection(Provider=Microsoft.ACE.OLEDB.12.0; Data Source = C:\Users\lwalsh6\Desktop\EmployeeDatabase_CW6.accdb);
+            cn = new OleDbConnection("Provider=Microsoft.ACE.OLEDB.12.0; Data Source = C:\\Users\\lwalsh6\\Desktop\\EmployeeDatabase_CW6.accdb");
         }
 
         private void SeeAssets_Click(object sender, RoutedEventArgs e)
@@ -39,8 +39,33 @@ namespace CW6_Database
             string data = "";
             while (read.Read())
             {
-                data += read[0].ToString() + "\n";
+                data += read[0].ToString() + "\t";
+                data += read[1].ToString() + "\t";
+                data += read[2].ToString() + "\t";
+                data += read[3].ToString() + "\n";
+                DataDisplay.Text = data + "\n";
             }
+            
+        }
+        private void SeeEmployees_Click(object sender, RoutedEventArgs e)
+        {
+            string query = "select* from Employee";
+            OleDbCommand cmd = new OleDbCommand(query, cn);
+            cn.Open();
+            OleDbDataReader read = cmd.ExecuteReader();
+            string data = "";
+            while (read.Read())
+            {
+                data += read[0].ToString() + "\t";
+                data += read[1].ToString() + "\t";
+                data += read[2].ToString() + "\n";
+                DataDisplay.Text = data + "\n";
+            }
+        }
+
+        private void DataDisplay_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

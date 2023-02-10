@@ -7,8 +7,27 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Background="White">
-        <Button x:Name="SeeAssets" Content="SEE ASSETS" Margin="10,375,704,10" Background="Red" Click="SeeAssets_Click"/>
-        <TextBlock TextWrapping="Wrap" Text="TextBlock" Margin="26,38,214,114"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="193*"/>
+            <ColumnDefinition Width="607*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="SeeAssets" Content="ASSETS" Margin="107,375,0,10" Click="SeeAssets_Click" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="DataDisplay" HorizontalAlignment="Left" Height="289" TextWrapping="Wrap" Text="Choose a Data table to display...&#xA;" VerticalAlignment="Top" Width="566" Grid.ColumnSpan="2" Margin="107,47,0,0" TextChanged="DataDisplay_TextChanged"/>
+        <Button x:Name="SeeEmployees" Content="EMPLOYEES" Margin="17,375,90,10" Click="SeeEmployees_Click" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Cyan" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>
