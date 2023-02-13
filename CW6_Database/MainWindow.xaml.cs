@@ -37,6 +37,7 @@ namespace CW6_Database
 
         private void SeeAssets_Click(object sender, RoutedEventArgs e)
         {
+            cn.Close();
             string query = "select* from Assets";
             OleDbCommand cmd = new OleDbCommand(query, cn);
             cn.Open();
@@ -54,6 +55,7 @@ namespace CW6_Database
         }
         private void SeeEmployees_Click(object sender, RoutedEventArgs e)
         {
+            cn.Close();
             string query = "select* from Employee";
             OleDbCommand cmd = new OleDbCommand(query, cn);
             cn.Open();
@@ -70,7 +72,7 @@ namespace CW6_Database
 
         private void DataDisplay_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
     }
 }
